@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keystroke – Typing Speed Test</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="2" y="2" width="30" height="30" rx="8" fill="var(--acc)"/><rect x="8" y="9" width="18" height="13" rx="3" fill="none" stroke="#fff" stroke-width="2"/><path d="M11 26h12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><div><h1>Key<span>stroke</span></h1><p class="tag">Typing speed and accuracy test</p></div></div><button class="icon" id="theme" aria-label="Switch theme">Light / Dark</button></header>
+
+<section id="play">
+<div class="bar">
+<div class="grp" id="gTime"><small>Time</small></div>
+<div class="grp" id="gLvl"><small>Level</small></div>
+</div>
+<div class="live"><div><b id="wpm">0</b><small>WPM</small></div><div><b id="acc">100%</b><small>Accuracy</small></div><div><b id="left">30</b><small>Seconds left</small></div></div>
+<div class="prog"><i id="pbar"></i></div>
+<div class="stage idle" id="stage">
+<div id="text" aria-live="off"></div>
+<div id="hint">Click here, then start typing. The timer begins on your first key.</div>
+<input id="in" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Typing input">
+</div>
+<div class="foot"><span><kbd>Tab</kbd> or <kbd>Esc</kbd> restarts with new words</span><button class="icon" id="restart">Restart</button></div>
+</section>
+
+<section class="res" id="res">
+<p class="rank" id="rank"></p>
+<div class="grid">
+<div class="card big"><small>Speed (WPM)</small><b id="rWpm">0</b></div>
+<div class="card big"><small>Accuracy</small><b id="rAcc">0%</b></div>
+<div class="card"><small>Raw speed</small><b id="rRaw">0</b></div>
+<div class="card"><small>Correct / wrong keys</small><b id="rKeys">0/0</b></div>
+</div>
+<div class="chart"><small style="color:var(--dim)">Speed over time (WPM per second)</small><svg id="svg" viewBox="0 0 600 190" preserveAspectRatio="none" role="img" aria-label="WPM over time chart"></svg></div>
+<div class="two"><div class="card"><small>Consistency</small><b id="rCons">0%</b></div><div class="card"><small>Most missed keys</small><div class="chips" id="miss"></div></div></div>
+<h2 class="h2">Recent tests</h2><div class="chart"><table id="hist"></table></div>
+<p class="best" id="best"></p>
+<div class="actions"><button class="pri" id="again">Try again (Enter)</button><button class="sec" id="share">Copy result</button></div>
+</section>
+<footer class="site-foot">Developed by <strong>Hania Batool</strong></footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
